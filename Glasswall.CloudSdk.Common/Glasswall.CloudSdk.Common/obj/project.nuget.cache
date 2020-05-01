@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "JLjk6eW86SaEwwpqnua+ZjjF/N0vLXBJ/veXT/A5tAw/FqaPXWyz/+xVbVzEU6WkK3E9FiDKrLg1mjEP5nXvZA==",
+  "success": true,
+  "projectFilePath": "C:\\git\\cloudsdk-netcore-common\\Glasswall.CloudSdk.Common\\Glasswall.CloudSdk.Common\\Glasswall.CloudSdk.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\seb\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\seb\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
