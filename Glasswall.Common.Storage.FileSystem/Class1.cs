@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Glasswall.CloudSdk.Common
+﻿namespace Glasswall.Common.Storage.FileSystem
 {
     public class TestClass
     {
