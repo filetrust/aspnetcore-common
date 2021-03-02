@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Version>1.0.1</Version>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Glasswall.Common.Storage.FileSystem\Glasswall.Common.Storage.FileSystem.csproj" />
+    <ProjectReference Include="..\Glasswall.Common.Storage\Glasswall.Common.Storage.csproj" />
+    <ProjectReference Include="..\Glasswall.Common.Test.NUnit\Glasswall.Common.Test.NUnit.csproj" />
+  </ItemGroup>
+
+</Project>
