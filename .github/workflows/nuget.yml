@@ -22,10 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+    - uses: actions/checkout@v2
     - name: publish on version change
       id: publish_nuget
       uses: rohith/publish-nuget@v2
       with:
       # Filepath of the project to be packaged, relative to root of repository
-        INPUT_NUGET_KEY: ${{secrets.NUGET_TOKEN}}
-        INPUT_PROJECT_FILE_PATH: ./Glasswall.Common.Storage.FileSystem/Glasswall.Common.Storage.FileSystem.csproj
+        NUGET_KEY: ${{secrets.NUGET_TOKEN}}
+        PROJECT_FILE_PATH: ./Glasswall.Common.Storage.FileSystem/Glasswall.Common.Storage.FileSystem.csproj
