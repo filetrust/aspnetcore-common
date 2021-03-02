@@ -27,5 +27,5 @@ jobs:
       uses: rohith/publish-nuget@v2
       with:
       # Filepath of the project to be packaged, relative to root of repository
-        NUGET_KEY: ${{secrets.NUGET_TOKEN}}
-        PROJECT_FILE_PATH: ./Glasswall.Common.Storage.FileSystem/Glasswall.Common.Storage.FileSystem.csproj
+        INPUT_NUGET_KEY: ${{secrets.NUGET_TOKEN}}
+        INPUT_PROJECT_FILE_PATH: ./Glasswall.Common.Storage.FileSystem/Glasswall.Common.Storage.FileSystem.csproj
