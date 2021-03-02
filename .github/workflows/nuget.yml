@@ -30,4 +30,4 @@ jobs:
       with:
       # Filepath of the project to be packaged, relative to root of repository
         NUGET_KEY: ${{secrets.NUGET_TOKEN}}
-        PROJECT_FILE_PATH: Glasswall.Common.Storage.FileSystem/Glasswall.Common.Storage.FileSystem.csproj
+        PROJECT_FILE_PATH: ./Glasswall.Common.Storage.FileSystem/Glasswall.Common.Storage.FileSystem.csproj
