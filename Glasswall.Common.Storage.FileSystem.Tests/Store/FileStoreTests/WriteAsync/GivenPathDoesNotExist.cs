@@ -22,10 +22,10 @@ namespace Glasswall.Common.Storage.FileSystem.Tests.Store.FileStoreTests.WriteAs
             _fullPath = $"{RootPath}{Path.DirectorySeparatorChar}{relativePath}";
 
             Encryption.Setup(s =>
-                    s.HandleWriteAsync(It.IsAny<Stream>(), It.IsAny<MemoryStream>(), It.IsAny<CancellationToken>()))
-                .Callback((Stream fs, MemoryStream ms, CancellationToken ct) =>
+                    s.HandleWriteAsync(It.IsAny<Stream>(), It.IsAny<byte[]>(), It.IsAny<CancellationToken>()))
+                .Callback((Stream fs, byte[] ms, CancellationToken ct) =>
                 {
-                    fs.WriteAsync(ms.ToArray(), ct).GetAwaiter().GetResult();
+                    fs.WriteAsync(ms, ct).GetAwaiter().GetResult();
                 });
 
             await ClassInTest.WriteAsync(relativePath, _expectedBytes = new byte[] { 0x00, 0x11 }, CancellationToken);
@@ -34,7 +34,7 @@ namespace Glasswall.Common.Storage.FileSystem.Tests.Store.FileStoreTests.WriteAs
         [Test]
         public void Encryption_Is_Invoked()
         {
-            Encryption.Verify(s => s.HandleWriteAsync(It.IsAny<Stream>(), It.IsAny<MemoryStream>(), It.IsAny<CancellationToken>()));
+            Encryption.Verify(s => s.HandleWriteAsync(It.IsAny<Stream>(), It.Is<byte[]>(f => f == _expectedBytes), It.IsAny<CancellationToken>()));
             Encryption.VerifyNoOtherCalls();
         }
 

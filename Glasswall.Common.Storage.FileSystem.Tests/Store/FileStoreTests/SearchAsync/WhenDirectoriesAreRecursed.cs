@@ -42,8 +42,8 @@ namespace Glasswall.Common.Storage.FileSystem.Tests.Store.FileStoreTests.SearchA
         [Test]
         public void Paths_Are_Returned()
         {
-            Assert.That(_paths, Has.One.EqualTo($"{_subPath}{Path.DirectorySeparatorChar}Testfile1.txt"));
-            Assert.That(_paths, Has.One.EqualTo($"{_subPath}{Path.DirectorySeparatorChar}Testfile2.txt"));
+            Assert.That(_paths, Has.Exactly(1).EqualTo($"{_subPath}{Path.DirectorySeparatorChar}Testfile1.txt"));
+            Assert.That(_paths, Has.Exactly(1).EqualTo($"{_subPath}{Path.DirectorySeparatorChar}Testfile2.txt"));
         }
 
         public class RecurseAllActionDecider : IPathActions

@@ -7,6 +7,6 @@ namespace Glasswall.Common.Storage.Store
     public interface IFileStoreEncryption
     {
         Task<MemoryStream> HandleReadAsync(Stream streamToRead, CancellationToken cancellationToken);
-        Task HandleWriteAsync(Stream streamToWriteTo, MemoryStream content, CancellationToken cancellationToken);
+        Task HandleWriteAsync(Stream streamToWriteTo, byte[] content, CancellationToken cancellationToken);
     }
 }

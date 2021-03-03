@@ -76,9 +76,8 @@ namespace Glasswall.Common.Storage.FileSystem.Store
 
             if (File.Exists(fullPath)) File.Delete(fullPath);
 
-            await using var fw = File.OpenWrite(fullPath);
-            await using var ms = new MemoryStream(bytes);
-            await _encryption.HandleWriteAsync(fw, ms, cancellationToken);
+            await using var fw = File.Open(fullPath, FileMode.Create);
+            await _encryption.HandleWriteAsync(fw, bytes, cancellationToken);
         }
 
         private async Task<MemoryStream> InternalReadAsync(string path, CancellationToken cancellationToken)

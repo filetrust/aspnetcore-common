@@ -36,12 +36,12 @@ namespace Glasswall.Common.Storage.FileSystem.Store
             }
         }
 
-        public async Task HandleWriteAsync(Stream streamToWriteTo, MemoryStream content, CancellationToken cancellationToken)
+        public async Task HandleWriteAsync(Stream streamToWriteTo, byte[] content, CancellationToken cancellationToken)
         {
             byte[] bytes;
 
-            if (_encryptionHandler != null) bytes = await GetEncryptedBytes(content.GetBuffer(), cancellationToken);
-            else bytes = content.GetBuffer();
+            if (_encryptionHandler != null) bytes = await GetEncryptedBytes(content, cancellationToken);
+            else bytes = content;
 
             await streamToWriteTo.WriteAsync(bytes, cancellationToken);
         }
