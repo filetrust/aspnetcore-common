@@ -71,4 +71,4 @@ jobs:
       with:
       # Filepath of the project to be packaged, relative to root of repository
         NUGET_KEY: ${{secrets.NUGET_TOKEN}}
-        PROJECT_FILE_PATH: ./Glasswall.Common.Test.NUnit/Glasswall.Common.Test.NUnit
+        PROJECT_FILE_PATH: ./Glasswall.Common.Test.NUnit/Glasswall.Common.Test.NUnit.csproj
