@@ -18,10 +18,10 @@ namespace Glasswall.Common.Storage.FileSystem.Store
         private readonly IFileStoreOptions _fileStoreOptions;
         private readonly IEncryptionHandler _encryptionHandler;
 
-        public FileStoreEncryption(IFileStoreOptions fileStoreOptions, IEncryptionHandler encryptionHandler)
+        public FileStoreEncryption(IFileStoreOptions fileStoreOptions)
         {
             _fileStoreOptions = fileStoreOptions ?? throw new ArgumentNullException(nameof(fileStoreOptions));
-            _encryptionHandler = encryptionHandler;
+            _encryptionHandler = fileStoreOptions.EncryptionHandler;
         }
 
         public async Task<MemoryStream> HandleReadAsync(Stream streamToRead, CancellationToken cancellationToken)

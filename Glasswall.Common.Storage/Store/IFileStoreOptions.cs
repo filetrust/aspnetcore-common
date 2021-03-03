@@ -1,4 +1,5 @@
-﻿using Polly;
+﻿using Glasswall.Common.Security;
+using Polly;
 
 namespace Glasswall.Common.Storage.Store
 {
@@ -7,5 +8,6 @@ namespace Glasswall.Common.Storage.Store
         string RootPath { get; }
         AsyncPolicy RetryPolicy { get; }
         byte[] EncryptionSecret { get; }
+        IEncryptionHandler EncryptionHandler { get; }
     }
 }
